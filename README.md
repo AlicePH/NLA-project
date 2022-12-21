@@ -7,7 +7,7 @@ In this project, we conducted experiments on the efficient compression of neural
 
 Based on theory provided by article: "Compressing Neural Networks: Towards Determining the Optimal Layer-wise Decomposition" by Lucas Liebenwein,  Alaa Maalouf, Oren Gal, Dan Feldman, Daniela Rus
 
-![alt text]([https://drive.google.com/file/d/1cyyh833ZKAy-fNU7i93Kh-Q57QibSHai/view?usp=sharing])
+![]([https://drive.google.com/file/d/1cyyh833ZKAy-fNU7i93Kh-Q57QibSHai/view?usp=sharing])
 
 ## Quickstart
 
