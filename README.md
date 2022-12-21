@@ -7,7 +7,17 @@ In this project, we conducted experiments on the efficient compression of neural
 
 Based on theory provided by article: "Compressing Neural Networks: Towards Determining the Optimal Layer-wise Decomposition" by Lucas Liebenwein,  Alaa Maalouf, Oren Gal, Dan Feldman, Daniela Rus
 
+We provide a solution that makes efficient decomposition on each layer. For this purpose we decompose each layer by folding the weight tensor into a matrix before applying SVD. The result pair of matrices is encoded as two separate layers. Scheme of working algorithm:
+
+
 ![12345](https://user-images.githubusercontent.com/98256321/209001199-c33f97e5-c5df-4975-9bf3-771f2cbf5cbb.png)
+
+We provide experiments for series of custom networks such as:
+1) LargeCNN
+2) Net_exper
+3) Net_Large_Experiments
+
+All of them yo can find in models directory.
 
 ## Quickstart
 
