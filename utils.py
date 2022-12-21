@@ -95,4 +95,5 @@ def generate_low_rank_linear(in_features, out_features, bias=True, rank=None):
     return nn.Linear(in_features, out_features, bias=bias)
   l1 = nn.Linear(in_features=in_features, out_features=rank, bias=False)
   l2 = nn.Linear(in_features=rank, out_features=out_features, bias=bias)
+
   return nn.Sequential(OrderedDict([('V', l1), ('U', l2)]))
