@@ -61,7 +61,7 @@ for epoch in range(2):
 
         optimizer.zero_grad()
 
-        outputs = net2(inputs)
+        outputs = model(inputs)
 
         loss = criterion(outputs, labels)
         loss.backward()
