@@ -10,7 +10,7 @@ Based on theory provided by article: "Compressing Neural Networks: Towards Deter
 We provide a solution that makes efficient decomposition on each layer. For this purpose we decompose each layer by folding the weight tensor into a matrix before applying SVD. The result pair of matrices is encoded as two separate layers. Scheme of working algorithm:
 
 
-![12345](https://user-images.githubusercontent.com/98256321/209001199-c33f97e5-c5df-4975-9bf3-771f2cbf5cbb.png)
+![12334](https://user-images.githubusercontent.com/98256321/209015877-86a3bcf8-5889-46c3-9bc4-f97e22ccf785.jpg)
 
 We provide experiments for series of custom networks such as:
 1) LargeCNN
@@ -24,6 +24,7 @@ All of them yo can find in models directory.
 Cloning the repository with all required submodules:
 
     git clone https://github.com/AlicePH/NLA-project
+
 
     cd NLA-project
 
