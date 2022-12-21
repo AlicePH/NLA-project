@@ -1,4 +1,5 @@
 from setuptools import setup
+
 setup(name='NLA project',
       author='JAXteam',
       description="""This is the code for the efficient compression of neural network layers.""",
