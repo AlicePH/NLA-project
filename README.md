@@ -21,6 +21,8 @@ We provide experiments for series of custom networks such as:
 All of them yo can find in models folder.
 
 The results we got are summarized in the next image:
+
+
 ![215431534](https://user-images.githubusercontent.com/98256321/209067114-9559ebdc-e261-47eb-a990-0a993d89710b.jpg)
 
 
