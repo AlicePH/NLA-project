@@ -3,12 +3,13 @@ import torchvision
 import torchvision.transforms as transforms
 import torch.nn as nn
 import torch.optim as optim
-from models.CaffeBNAlexNet import CaffeBNAlexNet
-from models.CaffeBNLowRankAlexNet import CaffeBNLowRankAlexNet
+from src.models.CaffeBNAlexNet import CaffeBNAlexNet
+from src.models.CaffeBNLowRankAlexNet import CaffeBNLowRankAlexNet
+from src.ranks import ranks1,ranks2, ranks3,ranks4,ranks5,ranks6,ranks7,ranks8,ranks9
 import time
 import datetime
 
-if __name__ == '__main__':
+def train(model_name, rank_=1, schema='scheme_1'):
     transform = transforms.Compose(
                                     [transforms.Resize((256,256)),
                                     transforms.ToTensor(),
@@ -31,14 +32,38 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     print(device)
-
+    rank = []
+    if rank_ == 1:
+        rank = ranks1
+    elif rank_ == 2:
+        rank_ = ranks2
+    elif rank_ == 3:
+        rank_ = ranks3
+    elif rank_ == 4:
+        rank_ = ranks4
+    elif rank_ == 5:
+        rank_ = ranks5
+    elif rank_ == 6:
+        rank_ = ranks6
+    elif rank_ == 7:
+        rank_ = ranks7
+    elif rank_ == 8:
+        rank_ = ranks8
+    elif rank_ == 9:
+        rank_ = ranks9
     model = CaffeBNAlexNet()
+    if model_name == 'CaffeBNAlexNet':
+        model = CaffeBNAlexNet()
+    else:
+        if schema == 'scheme_2':
+            model = CaffeBNLowRankAlexNet(ranks=rank, scheme='scheme_2')
+        else:
+            model = CaffeBNLowRankAlexNet(ranks=rank, scheme='scheme_1')
     model.to(device)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
-    flops = []
     counter = 0
     start_time = time.time()
     for epoch in range(2): 
@@ -60,5 +85,8 @@ if __name__ == '__main__':
                 print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}')
                 running_loss = 0.0
     elapsed_time = time.time() - start_time
-    torch.save(model.state_dict(), './trained_models/cifar_alexnet1.pth')
-    print(str(datetime.timedelta(seconds=elapsed_time)))
+    torch.save(model.state_dict(), 'src/trained_models/cifar_alexnet1.pth')
+    return str(datetime.timedelta(seconds=elapsed_time))
+
+if __name__ == '__main__':
+    train('CaffeBNAlexNet')
