@@ -27,7 +27,25 @@ Cloning the repository with all required submodules:
 
 
     cd NLA-project
-
+    
+    # Install requirements
+    pip install -r requirements.txt
+    
+    #Train
+    python main.py [--model] [--rank] [--scheme] --train
+    ::Parameter model describes model and can be CaffeBNAlexNet or CaffeBNLowRankAlexNet
+    ::Parameter rank take integer parameter which describes rank. You could see rank descriprion in file src/rank.py
+    ::Parameter scheme take two different schemes - scheme_1 or scheme_2
+    ::Example
+    python main.py --model='CaffeBNAlexNet' --rank=1 --scheme='scheme_2' --train
+    
+    #Test
+    python main.py [--model] [--rank] [--scheme] --test
+    ::Parameter model describes model and can be CaffeBNAlexNet or CaffeBNLowRankAlexNet
+    ::Parameter rank take integer parameter which describes rank. You could see rank descriprion in file src/rank.py
+    ::Parameter scheme take two different schemes - scheme_1 or scheme_2
+    ::Example
+    python main.py --model='CaffeBNAlexNet' --rank=1 --scheme='scheme_2' --test
 
 
 
