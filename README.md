@@ -13,11 +13,16 @@ We provide a solution that makes efficient decomposition on each layer. For this
 ![12334](https://user-images.githubusercontent.com/98256321/209015877-86a3bcf8-5889-46c3-9bc4-f97e22ccf785.jpg)
 
 We provide experiments for series of custom networks such as:
-1) LargeCNN
-2) Net_exper
-3) Net_Large_Experiments
+1) CNN
+2) CNNLowRank
+3) CaffeBNAlexNet
+4) CaffeBNLowRankAlexNet
 
-All of them yo can find in models directory.
+All of them yo can find in models folder.
+
+The results we got are summarized in the next image:
+
+
 
 ## Quickstart
 
@@ -25,9 +30,8 @@ Cloning the repository with all required submodules:
 
     git clone https://github.com/AlicePH/NLA-project
 
-
     cd NLA-project
 
-
+To run the models it is necessary to make the changes to the `main.py` file and choose the model, this file automatically runs the training loop for the selected model and computes the training time, for simplicity and visualization, we also provide a notebook file where it is possible to visualize the results.
 
 
